@@ -18,15 +18,15 @@ variable "private1c_subnet_cidr" {
   default = "10.1.12.0/24"
 }
 
-variable "builder_instance_type" {
+variable "bastion_instance_type" {
   default = "t2.nano"
 }
 
-variable "builder_volume_size" {
+variable "bastion_volume_size" {
   default = "50"
 }
 
-variable "builder_public_key" {
+variable "bastion_public_key" {
   default = "your public key"
 }
 
