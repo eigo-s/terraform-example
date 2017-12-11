@@ -19,6 +19,6 @@ resource "datadog_monitor" "cpu_usertime" {
   include_tags = false
 
   tags = [
-		"*"
-	],
+    "*",
+  ]
 }

@@ -71,7 +71,6 @@ resource "null_resource" "install_datadog_agent" {
   }
 }
 
-
 output "bastion_public_ip" {
   value = "${aws_eip.bastion-eip.public_ip}"
 }

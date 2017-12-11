@@ -6,7 +6,7 @@ resource "datadog_user" "admin" {
   email  = "${element(var.datadog_admin_email, count.index)}"
   handle = "${element(var.datadog_admin_email, count.index)}"
 
-  role = "admin"
+  role     = "admin"
   is_admin = true
 }
 

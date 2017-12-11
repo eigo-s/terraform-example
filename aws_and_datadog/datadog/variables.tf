@@ -3,29 +3,33 @@ variable "datadog_app_key" {}
 
 variable "datadog_admin_name" {
   type = "list"
+
   default = [
-    "admin"
+    "admin",
   ]
 }
 
 variable "datadog_admin_email" {
   type = "list"
+
   default = [
-    "new@example.com"
+    "new@example.com",
   ]
 }
 
 variable "datadog_standard_name" {
   type = "list"
+
   default = [
-    "hoge"
+    "hoge",
   ]
 }
 
 variable "datadog_standard_email" {
   type = "list"
+
   default = [
-    "hoge@example.com"
+    "hoge@example.com",
   ]
 }
 
@@ -36,6 +40,7 @@ variable "datadog_monitor_slack_channel" {
 variable "datadog_monitor_cpu_usertime_thresholds_warning" {
   default = "50"
 }
+
 variable "datadog_monitor_cpu_usertime_thresholds_critical" {
   default = "60"
 }
