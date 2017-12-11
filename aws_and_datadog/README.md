@@ -1,10 +1,8 @@
-ec2_and_datadog
+aws_and_datadog
 ===============
 
-ec2 + datadogをterraformから操作してみる
+aws + datadogをterraformから操作してみる
 
 requirements
 ============
-terraform 0.8.1
-
-
+terraform 0.11.1
