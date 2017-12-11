@@ -52,6 +52,26 @@ resource "aws_instance" "bastion" {
   }
 }
 
-output "bastion_public_dns" {
-  value = "${aws_instance.bastion.public_dns}"
+resource "null_resource" "install_datadog_agent" {
+  triggers {
+    bastion_id = "${aws_instance.bastion.id}"
+  }
+
+  provisioner "remote-exec" {
+    connection {
+      type        = "ssh"
+      host        = "${aws_eip.bastion-eip.public_ip}"
+      user        = "${var.bastion_user}"
+      private_key = "${file("${path.module}/bastion.pem")}"
+    }
+
+    inline = [
+      "DD_API_KEY=${var.datadog_api_key} bash -c \"$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/install_agent.sh)\"",
+    ]
+  }
+}
+
+
+output "bastion_public_ip" {
+  value = "${aws_eip.bastion-eip.public_ip}"
 }

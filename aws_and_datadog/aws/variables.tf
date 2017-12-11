@@ -46,6 +46,8 @@ variable "bastion_user" {
   default = "ec2-user"
 }
 
+variable "datadog_api_key" {}
+
 variable "datadog_external_id" {
   default = ""
 }
